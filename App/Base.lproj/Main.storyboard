@@ -42,12 +42,29 @@
                                     <action selector="endGameButtonTepped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIw-SR-HF8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIK-fG-rha">
+                                <rect key="frame" x="20" y="142" width="139" height="30"/>
+                                <state key="normal" title="Where did you play?"/>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4R-Oj-y3X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0T-ok-ghj">
+                                <rect key="frame" x="580" y="167" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J1U-te-fLS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Y7-Ps-LwM"/>
+                            <constraint firstItem="NIK-fG-rha" firstAttribute="top" secondItem="Ok5-tB-LbZ" secondAttribute="bottom" constant="8" id="3oa-F2-P8v"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="top" secondItem="aRI-RE-2mx" secondAttribute="bottom" constant="8" id="8CB-aw-6RO"/>
+                            <constraint firstItem="G0T-ok-ghj" firstAttribute="baseline" secondItem="NIK-fG-rha" secondAttribute="baseline" id="KFa-DB-ZZ9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J1U-te-fLS" secondAttribute="leading" id="O49-EI-u1y"/>
+                            <constraint firstItem="NIK-fG-rha" firstAttribute="leading" secondItem="Ok5-tB-LbZ" secondAttribute="leading" id="Zi6-8Q-FOW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G0T-ok-ghj" secondAttribute="trailing" id="cge-A2-tRN"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="leading" secondItem="aRI-RE-2mx" secondAttribute="leading" id="dCf-QG-j6x"/>
                             <constraint firstItem="vBb-gJ-Cuh" firstAttribute="baseline" secondItem="J1U-te-fLS" secondAttribute="baseline" id="dt6-cY-pM6"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="top" secondItem="J1U-te-fLS" secondAttribute="bottom" constant="8" id="gsm-Jn-YQi"/>
@@ -56,11 +73,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="locationAuthorizationLabel" destination="G0T-ok-ghj" id="wfy-tc-w0L"/>
                         <outlet property="spikeLabel" destination="vBb-gJ-Cuh" id="ojQ-6A-zwx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="255" y="465"/>
         </scene>
     </scenes>
 </document>
