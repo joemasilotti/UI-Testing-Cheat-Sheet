@@ -33,4 +33,9 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         textField.tap()
         textField.typeText("Dig Newtons")
     }
+
+    func testDismissingAnAlert() {
+        app.buttons["End Game"].tap()
+        app.alerts["You won!"].buttons["Awesome!"].tap()
+    }
 }

@@ -14,4 +14,16 @@ class ViewController: UIViewController {
     @IBAction func bumpSetButtonTepped(sender: UIButton) {
         spikeLabel.text = "Spike!"
     }
+
+    @IBAction func endGameButtonTepped(sender: UIButton) {
+        let alert = UIAlertController(title: "You won!",
+            message: "Dig Newtons: 21\nSafety First: 18",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        let dismissAction = UIAlertAction(title: "Awesome!",
+            style: UIAlertActionStyle.Default,
+            handler: nil)
+        alert.addAction(dismissAction)
+
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

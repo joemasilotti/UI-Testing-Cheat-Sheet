@@ -35,11 +35,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ok5-tB-LbZ">
+                                <rect key="frame" x="20" y="104" width="71" height="30"/>
+                                <state key="normal" title="End Game"/>
+                                <connections>
+                                    <action selector="endGameButtonTepped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIw-SR-HF8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J1U-te-fLS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Y7-Ps-LwM"/>
+                            <constraint firstItem="Ok5-tB-LbZ" firstAttribute="top" secondItem="aRI-RE-2mx" secondAttribute="bottom" constant="8" id="8CB-aw-6RO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J1U-te-fLS" secondAttribute="leading" id="O49-EI-u1y"/>
+                            <constraint firstItem="Ok5-tB-LbZ" firstAttribute="leading" secondItem="aRI-RE-2mx" secondAttribute="leading" id="dCf-QG-j6x"/>
                             <constraint firstItem="vBb-gJ-Cuh" firstAttribute="baseline" secondItem="J1U-te-fLS" secondAttribute="baseline" id="dt6-cY-pM6"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="top" secondItem="J1U-te-fLS" secondAttribute="bottom" constant="8" id="gsm-Jn-YQi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vBb-gJ-Cuh" secondAttribute="trailing" id="yO2-vb-gby"/>
