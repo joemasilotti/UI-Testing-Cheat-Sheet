@@ -14,10 +14,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var spikeLabel: UILabel!
     @IBOutlet weak var locationAuthorizationLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var sliderValueLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.updateLocationAuthorizationStatus()
+        self.updateSliderValue()
     }
 
     @IBAction func bumpSetButtonTepped(sender: UIButton) {
@@ -41,6 +45,10 @@ class ViewController: UIViewController {
         locationManager.delegate = self
     }
 
+    @IBAction func sliderValueChanged(slider: UISlider) {
+        updateSliderValue()
+    }
+
     private func updateLocationAuthorizationStatus() {
         var authorizationStatus: String
         switch CLLocationManager.authorizationStatus() {
@@ -54,6 +62,10 @@ class ViewController: UIViewController {
         }
 
         locationAuthorizationLabel.text = authorizationStatus
+    }
+
+    private func updateSliderValue() {
+        sliderValueLabel.text = String(format: "%.0f", slider.value)
     }
 }
 

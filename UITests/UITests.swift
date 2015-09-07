@@ -49,4 +49,9 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         app.alerts.buttons["Allow"].tap() // works, but crashes the test suite.
         XCTAssert(app.staticTexts["Authorized"].exists)
     }
+
+    func testAdjustingASlider() {
+        app.sliders.element.adjustToNormalizedSliderPosition(0.7)
+        XCTAssert(app.staticTexts["7"].exists)
+    }
 }

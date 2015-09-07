@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -55,6 +56,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-LE-3PU">
+                                <rect key="frame" x="18" y="180" width="304" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iaH-BG-hrJ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0j-KE-qgz">
+                                <rect key="frame" x="580" y="215" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -63,17 +76,24 @@
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="top" secondItem="aRI-RE-2mx" secondAttribute="bottom" constant="8" id="8CB-aw-6RO"/>
                             <constraint firstItem="G0T-ok-ghj" firstAttribute="baseline" secondItem="NIK-fG-rha" secondAttribute="baseline" id="KFa-DB-ZZ9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J1U-te-fLS" secondAttribute="leading" id="O49-EI-u1y"/>
+                            <constraint firstItem="xzh-LE-3PU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ShG-iH-wXp"/>
+                            <constraint firstItem="xzh-LE-3PU" firstAttribute="top" secondItem="NIK-fG-rha" secondAttribute="bottom" constant="8" id="V3J-zy-6kU"/>
                             <constraint firstItem="NIK-fG-rha" firstAttribute="leading" secondItem="Ok5-tB-LbZ" secondAttribute="leading" id="Zi6-8Q-FOW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0j-KE-qgz" secondAttribute="trailing" id="bsb-cl-T0f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G0T-ok-ghj" secondAttribute="trailing" id="cge-A2-tRN"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="leading" secondItem="aRI-RE-2mx" secondAttribute="leading" id="dCf-QG-j6x"/>
                             <constraint firstItem="vBb-gJ-Cuh" firstAttribute="baseline" secondItem="J1U-te-fLS" secondAttribute="baseline" id="dt6-cY-pM6"/>
+                            <constraint firstItem="xzh-LE-3PU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="evY-wr-s73"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="top" secondItem="J1U-te-fLS" secondAttribute="bottom" constant="8" id="gsm-Jn-YQi"/>
+                            <constraint firstItem="v0j-KE-qgz" firstAttribute="baseline" secondItem="xzh-LE-3PU" secondAttribute="baseline" id="k9H-z9-7HU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vBb-gJ-Cuh" secondAttribute="trailing" id="yO2-vb-gby"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="leading" secondItem="J1U-te-fLS" secondAttribute="leading" id="zq5-ii-DAF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="locationAuthorizationLabel" destination="G0T-ok-ghj" id="wfy-tc-w0L"/>
+                        <outlet property="slider" destination="xzh-LE-3PU" id="kOe-P9-98u"/>
+                        <outlet property="sliderValueLabel" destination="v0j-KE-qgz" id="M0A-Gf-26n"/>
                         <outlet property="spikeLabel" destination="vBb-gJ-Cuh" id="ojQ-6A-zwx"/>
                     </connections>
                 </viewController>
