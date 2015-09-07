@@ -16,4 +16,8 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         continueAfterFailure = false
         app.launch()
     }
+
+    func testElementExists() {
+        XCTAssert(app.buttons["Bump, Set..."].exists)
+    }
 }
