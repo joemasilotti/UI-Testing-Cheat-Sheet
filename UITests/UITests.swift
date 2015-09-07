@@ -27,4 +27,10 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         app.buttons["Bump, Set..."].tap()
         XCTAssert(app.staticTexts["Spike!"].exists)
     }
+
+    func testTypingText() {
+        let textField = app.textFields["Team Name"]
+        textField.tap()
+        textField.typeText("Dig Newtons")
+    }
 }
