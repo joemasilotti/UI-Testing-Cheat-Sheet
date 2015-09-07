@@ -9,5 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var spikeLabel: UILabel!
 
+    @IBAction func bumpSetButtonTepped(sender: UIButton) {
+        spikeLabel.text = "Spike!"
+    }
 }

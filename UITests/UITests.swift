@@ -20,4 +20,11 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
     func testElementExists() {
         XCTAssert(app.buttons["Bump, Set..."].exists)
     }
+
+    func testTappingAButton() {
+        XCTAssertFalse(app.staticTexts["Spike!"].exists)
+
+        app.buttons["Bump, Set..."].tap()
+        XCTAssert(app.staticTexts["Spike!"].exists)
+    }
 }
