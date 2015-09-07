@@ -11,17 +11,21 @@ import UIKit
 
 class ViewController: UIViewController {
     let locationManager = CLLocationManager()
+    let formations = [ "4-2 Formation", "5-1 Formation", "6-2 Formation" ]
 
     @IBOutlet weak var spikeLabel: UILabel!
     @IBOutlet weak var locationAuthorizationLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var sliderValueLabel: UILabel!
+    @IBOutlet weak var formationsPicker: UIPickerView!
+    @IBOutlet weak var selectedFormationLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.updateLocationAuthorizationStatus()
         self.updateSliderValue()
+        self.updatePickerValue()
     }
 
     @IBAction func bumpSetButtonTepped(sender: UIButton) {
@@ -67,6 +71,10 @@ class ViewController: UIViewController {
     private func updateSliderValue() {
         sliderValueLabel.text = String(format: "%.0f", slider.value)
     }
+
+    private func updatePickerValue() {
+        selectedFormationLabel.text = formations[formationsPicker.selectedRowInComponent(0)]
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -76,5 +84,25 @@ extension ViewController: CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
+    }
+}
+
+extension ViewController: UIPickerViewDataSource {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return formations.count
+    }
+}
+
+extension ViewController: UIPickerViewDelegate {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return formations[row]
+    }
+
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        updatePickerValue()
     }
 }

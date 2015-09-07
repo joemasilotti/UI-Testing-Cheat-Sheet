@@ -68,30 +68,58 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOR-fE-lwB">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0Jr-sg-v6w"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="soB-kI-fwq"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection Formation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-YA-3T7">
+                                <rect key="frame" x="20" y="355" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSn-QE-L24">
+                                <rect key="frame" x="580" y="376" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J1U-te-fLS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Y7-Ps-LwM"/>
                             <constraint firstItem="NIK-fG-rha" firstAttribute="top" secondItem="Ok5-tB-LbZ" secondAttribute="bottom" constant="8" id="3oa-F2-P8v"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="top" secondItem="aRI-RE-2mx" secondAttribute="bottom" constant="8" id="8CB-aw-6RO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="X5d-YA-3T7" secondAttribute="leading" id="BLw-np-abu"/>
+                            <constraint firstItem="OOR-fE-lwB" firstAttribute="top" secondItem="X5d-YA-3T7" secondAttribute="bottom" constant="8" id="Fse-Jt-AOi"/>
                             <constraint firstItem="G0T-ok-ghj" firstAttribute="baseline" secondItem="NIK-fG-rha" secondAttribute="baseline" id="KFa-DB-ZZ9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J1U-te-fLS" secondAttribute="leading" id="O49-EI-u1y"/>
                             <constraint firstItem="xzh-LE-3PU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ShG-iH-wXp"/>
                             <constraint firstItem="xzh-LE-3PU" firstAttribute="top" secondItem="NIK-fG-rha" secondAttribute="bottom" constant="8" id="V3J-zy-6kU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xSn-QE-L24" secondAttribute="trailing" id="W0M-pG-H33"/>
                             <constraint firstItem="NIK-fG-rha" firstAttribute="leading" secondItem="Ok5-tB-LbZ" secondAttribute="leading" id="Zi6-8Q-FOW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v0j-KE-qgz" secondAttribute="trailing" id="bsb-cl-T0f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G0T-ok-ghj" secondAttribute="trailing" id="cge-A2-tRN"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="leading" secondItem="aRI-RE-2mx" secondAttribute="leading" id="dCf-QG-j6x"/>
                             <constraint firstItem="vBb-gJ-Cuh" firstAttribute="baseline" secondItem="J1U-te-fLS" secondAttribute="baseline" id="dt6-cY-pM6"/>
                             <constraint firstItem="xzh-LE-3PU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="evY-wr-s73"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OOR-fE-lwB" secondAttribute="trailing" constant="-20" id="f82-hy-wEp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OOR-fE-lwB" secondAttribute="bottom" id="gfJ-h1-ZBn"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="top" secondItem="J1U-te-fLS" secondAttribute="bottom" constant="8" id="gsm-Jn-YQi"/>
+                            <constraint firstItem="xSn-QE-L24" firstAttribute="baseline" secondItem="X5d-YA-3T7" secondAttribute="baseline" id="hmP-rZ-L3E"/>
                             <constraint firstItem="v0j-KE-qgz" firstAttribute="baseline" secondItem="xzh-LE-3PU" secondAttribute="baseline" id="k9H-z9-7HU"/>
+                            <constraint firstItem="OOR-fE-lwB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="wM0-zQ-GxU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vBb-gJ-Cuh" secondAttribute="trailing" id="yO2-vb-gby"/>
                             <constraint firstItem="aRI-RE-2mx" firstAttribute="leading" secondItem="J1U-te-fLS" secondAttribute="leading" id="zq5-ii-DAF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="formationsPicker" destination="OOR-fE-lwB" id="auB-pN-AIX"/>
                         <outlet property="locationAuthorizationLabel" destination="G0T-ok-ghj" id="wfy-tc-w0L"/>
+                        <outlet property="selectedFormationLabel" destination="xSn-QE-L24" id="e0N-RS-hSp"/>
                         <outlet property="slider" destination="xzh-LE-3PU" id="kOe-P9-98u"/>
                         <outlet property="sliderValueLabel" destination="v0j-KE-qgz" id="M0A-Gf-26n"/>
                         <outlet property="spikeLabel" destination="vBb-gJ-Cuh" id="ojQ-6A-zwx"/>

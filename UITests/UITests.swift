@@ -54,4 +54,12 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         app.sliders.element.adjustToNormalizedSliderPosition(0.7)
         XCTAssert(app.staticTexts["7"].exists)
     }
+
+    func testAdjustingAPicker() {
+        let selectedFormationLabel = app.staticTexts["6-2 Formation"]
+        XCTAssertFalse(selectedFormationLabel.exists)
+
+        app.pickerWheels.element.adjustToPickerWheelValue("6-2 Formation")
+        XCTAssert(selectedFormationLabel.exists)
+    }
 }
