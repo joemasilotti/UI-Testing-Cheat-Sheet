@@ -62,4 +62,16 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         app.pickerWheels.element.adjustToPickerWheelValue("6-2 Formation")
         XCTAssert(selectedFormationLabel.exists)
     }
+
+    func testWaitingForAnElementToAppear() {
+        let zeroLabel = self.app.staticTexts["0"]
+        XCTAssertFalse(zeroLabel.exists)
+
+        let existsPredicate = NSPredicate(format: "exists == 1")
+        expectationForPredicate(existsPredicate, evaluatedWithObject: zeroLabel, handler: nil)
+
+        app.buttons["5, 4, 3, 2..."].tap()
+        waitForExpectationsWithTimeout(5, handler: nil)
+        XCTAssert(zeroLabel.exists)
+    }
 }

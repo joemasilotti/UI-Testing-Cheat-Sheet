@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderValueLabel: UILabel!
     @IBOutlet weak var formationsPicker: UIPickerView!
     @IBOutlet weak var selectedFormationLabel: UILabel!
+    @IBOutlet weak var countdownLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,10 @@ class ViewController: UIViewController {
         updateSliderValue()
     }
 
+    func updateCountdownLabel() {
+        countdownLabel.text = "0"
+    }
+
     private func updateLocationAuthorizationStatus() {
         var authorizationStatus: String
         switch CLLocationManager.authorizationStatus() {
@@ -66,6 +71,13 @@ class ViewController: UIViewController {
         }
 
         locationAuthorizationLabel.text = authorizationStatus
+    }
+
+    @IBAction func countdownButtonTapped(sender: UIButton) {
+        countdownLabel.text = "1"
+        performSelector(Selector("updateCountdownLabel"),
+            withObject: nil,
+            afterDelay: 1)
     }
 
     private func updateSliderValue() {
