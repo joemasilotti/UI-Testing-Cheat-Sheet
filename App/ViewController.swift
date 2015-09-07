@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.updateLocationAuthorizationStatus()
-        self.updateSliderValue()
-        self.updatePickerValue()
+        updateLocationAuthorizationStatus()
+        updateSliderValue()
+        updatePickerValue()
     }
 
     @IBAction func bumpSetButtonTepped(sender: UIButton) {
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             handler: nil)
         alert.addAction(dismissAction)
 
-        self.presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true, completion: nil)
     }
 
     @IBAction func locationButtonTapped(sender: UIButton) {
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        self.updateLocationAuthorizationStatus()
+        updateLocationAuthorizationStatus()
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
