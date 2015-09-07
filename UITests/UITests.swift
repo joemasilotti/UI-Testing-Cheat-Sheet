@@ -74,4 +74,32 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         waitForExpectationsWithTimeout(5, handler: nil)
         XCTAssert(zeroLabel.exists)
     }
+
+    func testTextExistsInAWebView() {
+        app.buttons["More Information"].tap()
+
+        let volleyballLabel = app.staticTexts["Volleyball"]
+        waitForElementToAppear(volleyballLabel)
+        XCTAssert(volleyballLabel.exists)
+    }
+
+    func testTappingALinkInAWebView() {
+        app.buttons["More Information"].tap()
+
+        let disambiguationLink = app.links["Volleyball (disambiguation)"]
+        waitForElementToAppear(disambiguationLink)
+        XCTAssert(disambiguationLink.exists)
+
+        disambiguationLink.tap()
+
+        let volleyballLink = app.links["Volleyball (ball)"]
+        waitForElementToAppear(volleyballLink)
+        XCTAssert(volleyballLink.exists)
+    }
+
+    private func waitForElementToAppear(element: XCUIElement) {
+        let existsPredicate = NSPredicate(format: "exists == 1")
+        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
 }
