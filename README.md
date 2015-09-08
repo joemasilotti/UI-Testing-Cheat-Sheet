@@ -72,3 +72,10 @@ XCTAssert(selectedFormationLabel.exists)
 app.buttons["More Information"].tap() // loads https://wikipedia.org/wiki/Volleyball
 app.links["Volleyball (disambiguation)"].tap()
 ````
+
+## Interactions
+
+### Verifying the current controller's title
+````swift
+XCTAssert(app.navigationBars["Details"].exists)
+````

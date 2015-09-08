@@ -97,6 +97,11 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         XCTAssert(volleyballLink.exists)
     }
 
+    func testPushingAController() {
+        app.buttons["Show Details"].tap()
+        XCTAssert(app.navigationBars["Match Details"].exists)
+    }
+
     private func waitForElementToAppear(element: XCUIElement) {
         let existsPredicate = NSPredicate(format: "exists == 1")
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
