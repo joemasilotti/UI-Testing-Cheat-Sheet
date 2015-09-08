@@ -7,70 +7,71 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
 ### Testing if an element exists
 
 ````swift
-XCTAssert(app.buttons["Bump, Set..."].exists)
+XCTAssert(app.staticTexts["Welcome"].exists)
 ````
 
 ### Waiting for an element to appear
+Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
+
 ````swift
-let zeroLabel = self.app.staticTexts["0"]
-XCTAssertFalse(zeroLabel.exists)
+let goLabel = self.app.staticTexts["Go!"]
+XCTAssertFalse(goLabel.exists)
 
 let existsPredicate = NSPredicate(format: "exists == 1")
-expectationForPredicate(existsPredicate, evaluatedWithObject: zeroLabel, handler: nil)
+expectationForPredicate(existsPredicate, evaluatedWithObject: goLabel, handler: nil)
 
-app.buttons["5, 4, 3, 2..."].tap()
+app.buttons["Ready, set..."].tap()
 waitForExpectationsWithTimeout(5, handler: nil)
-XCTAssert(zeroLabel.exists)
+XCTAssert(goLabel.exists)
 ````
 
 ## Interacting with System Controls
 
 ### Tapping buttons
+Identify buttons by their accessibility label.
+
 ````swift
-XCTAssertFalse(app.staticTexts["Spike!"].exists)
-app.buttons["Bump, Set..."].tap()
-XCTAssert(app.staticTexts["Spike!"].exists)
+app.buttons["Add"].tap()
 ````
 
 ### Typing text
+First make sure the text field has focus by tapping on it.
+
 ````swift
-let textField = app.textFields["Team Name"]
+let textField = app.textFields["Username"]
 textField.tap()
-textField.typeText("Dig Newtons")
+textField.typeText("joemasilotti")
 ````
 
 ### Dismissing alerts
 ````swift
-app.buttons["End Game"].tap()
-app.alerts["You won!"].buttons["Awesome!"].tap()
+app.alerts["Alert Title"].buttons["Button Title"].tap()
 ````
 
-### Handling system alerts (broken, see [radar://4979891669827584](http://openradar.appspot.com/radar?id=4979891669827584))
+### Handling system alerts
+Present a location services authorization dialog to the user and dismiss it with the following code.
+
+Note that this will correctly dismiss the alert, but the test suite will crash. See [radar://4979891669827584](http://openradar.appspot.com/radar?id=4979891669827584).
+
 ````swift
-app.buttons["Where did you play?"].tap()
-app.alerts.buttons["Allow"].tap() // works, but crashes the test suite.
-XCTAssert(app.staticTexts["Authorized"].exists)
+app.alerts.buttons["Allow"].tap()
 ````
 
 ### Sliding sliders
+This will slide the value of the slider to 70%.
+
 ````swift
 app.sliders.element.adjustToNormalizedSliderPosition(0.7)
-XCTAssert(app.staticTexts["7"].exists)
 ````
 
 ### Interacting with pickers
 ````swift
-let selectedFormationLabel = app.staticTexts["6-2 Formation"]
-XCTAssertFalse(selectedFormationLabel.exists)
-
-app.pickerWheels.element.adjustToPickerWheelValue("6-2 Formation")
-XCTAssert(selectedFormationLabel.exists)
+app.pickerWheels.element.adjustToPickerWheelValue("Picker Wheel Item Title")
 ````
 
 ### Tapping links in web views
 ````swift
-app.buttons["More Information"].tap() // loads https://wikipedia.org/wiki/Volleyball
-app.links["Volleyball (disambiguation)"].tap()
+app.links["Tweet this"].tap()
 ````
 
 ## Interactions
