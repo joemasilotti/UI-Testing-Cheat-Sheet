@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDX-yz-ZOA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDX-yz-ZOA">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -76,7 +76,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection Formation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-YA-3T7">
-                                <rect key="frame" x="20" y="355" width="158" height="21"/>
+                                <rect key="frame" x="20" y="355.5" width="157.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgy-KU-8i3">
-                                <rect key="frame" x="20" y="329" width="89" height="30"/>
+                                <rect key="frame" x="20" y="338" width="89" height="30"/>
                                 <state key="normal" title="Show Details"/>
                                 <connections>
                                     <segue destination="59l-8H-Nsu" kind="show" id="UJt-Of-lIh"/>
@@ -119,7 +119,7 @@
                         <constraints>
                             <constraint firstItem="J1U-te-fLS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Y7-Ps-LwM"/>
                             <constraint firstItem="NIK-fG-rha" firstAttribute="top" secondItem="Ok5-tB-LbZ" secondAttribute="bottom" constant="8" id="3oa-F2-P8v"/>
-                            <constraint firstItem="mgy-KU-8i3" firstAttribute="top" secondItem="jl2-wy-HfZ" secondAttribute="bottom" constant="-1" id="6p1-XO-DYZ"/>
+                            <constraint firstItem="mgy-KU-8i3" firstAttribute="top" secondItem="jl2-wy-HfZ" secondAttribute="bottom" constant="8" id="6p1-XO-DYZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vOC-Ks-4M5" secondAttribute="trailing" id="7vB-B3-bKa"/>
                             <constraint firstItem="Ok5-tB-LbZ" firstAttribute="top" secondItem="aRI-RE-2mx" secondAttribute="bottom" constant="8" id="8CB-aw-6RO"/>
                             <constraint firstItem="mgy-KU-8i3" firstAttribute="leading" secondItem="jl2-wy-HfZ" secondAttribute="leading" id="8se-CY-4S7"/>
