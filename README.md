@@ -1,6 +1,6 @@
 # UI Testing Cheat Sheet
 
-The included Xcode 7 project highlights working code with a simple Test Host. This was last updated for Xcode 7 Beta 6.
+The included Xcode 7 project highlights working code with a simple Test Host. This was last updated for Xcode 7 GM.
 
 ## Basic Functionality
 
