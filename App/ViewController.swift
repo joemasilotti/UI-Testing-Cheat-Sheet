@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         updatePickerValue()
     }
 
-    @IBAction func bumpSetButtonTepped(sender: UIButton) {
+    @IBAction func bumpSetButtonTapped(sender: UIButton) {
         spikeLabel.text = "Spike!"
     }
 
-    @IBAction func endGameButtonTepped(sender: UIButton) {
+    @IBAction func endGameButtonTapped(sender: UIButton) {
         let alert = UIAlertController(title: "You won!",
             message: "Dig Newtons: 21\nSafety First: 18",
             preferredStyle: UIAlertControllerStyle.Alert)

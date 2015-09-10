@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="72" width="84" height="30"/>
                                 <state key="normal" title="Bump, Set..."/>
                                 <connections>
-                                    <action selector="bumpSetButtonTepped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="50J-ic-7NH"/>
+                                    <action selector="bumpSetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZK-LP-dD0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBb-gJ-Cuh">
@@ -40,7 +40,7 @@
                                 <rect key="frame" x="20" y="148" width="71" height="30"/>
                                 <state key="normal" title="End Game"/>
                                 <connections>
-                                    <action selector="endGameButtonTepped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIw-SR-HF8"/>
+                                    <action selector="endGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6s-Ie-5lm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIK-fG-rha">
