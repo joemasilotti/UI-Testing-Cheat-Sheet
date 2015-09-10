@@ -80,3 +80,16 @@ app.links["Tweet this"].tap()
 ````swift
 XCTAssert(app.navigationBars["Details"].exists)
 ````
+
+### Reordering table cells
+If you have a `UITableViewCell` with default style and set the text to "Title", the reorder control's accessibility label becomes "Reorder Title".
+
+Using this we can drag one reorder control to another, essentially reordering the cells.
+
+````swift
+let topButton = app.buttons["Reorder Top Cell"]
+let bottomButton = app.buttons["Reorder Bottom Cell"]
+bottomButton.pressForDuration(0.5, thenDragToElement: topButton)
+
+XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)
+````

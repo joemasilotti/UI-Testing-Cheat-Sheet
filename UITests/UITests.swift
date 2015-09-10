@@ -75,6 +75,16 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         XCTAssert(zeroLabel.exists)
     }
 
+    func testCellReordering() {
+        app.buttons["Adjust Roster"].tap()
+
+        let joeButton = app.buttons["Reorder Joe"]
+        let brianButton = app.buttons["Reorder Brian"]
+        joeButton.pressForDuration(0.5, thenDragToElement: brianButton)
+
+        XCTAssertLessThanOrEqual(joeButton.frame.maxY, brianButton.frame.minY)
+    }
+
     func testTextExistsInAWebView() {
         app.buttons["More Information"].tap()
 
