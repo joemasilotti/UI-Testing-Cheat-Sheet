@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  ManageRosterTableViewController.swift
 //  UI Testing Cheat Sheet
 //
 //  Created by Joe Masilotti on 9/10/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class ManageRosterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.editing = true
@@ -16,6 +16,10 @@ class TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
+    }
+
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.None
     }
 
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) { }
