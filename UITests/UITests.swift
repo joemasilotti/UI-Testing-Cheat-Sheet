@@ -21,6 +21,12 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
         XCTAssert(app.staticTexts["Manage Team"].exists)
     }
 
+    func testElementExistsWithPredicate() {
+        let predicate = NSPredicate(format: "label BEGINSWITH[cd] 'set your team details'")
+        let label = app.staticTexts.elementMatchingPredicate(predicate)
+        XCTAssert(label.exists)
+    }
+
     func testTappingAButton() {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
