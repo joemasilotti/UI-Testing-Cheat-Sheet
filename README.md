@@ -65,8 +65,23 @@ app.sliders.element.adjustToNormalizedSliderPosition(0.7)
 ````
 
 ### Interacting with pickers
+A picker with one wheel:
+
 ````swift
 app.pickerWheels.element.adjustToPickerWheelValue("Picker Wheel Item Title")
+````
+
+A picker with multiple wheels. Make sure to set the accessibility delegate so the framework can identify the different wheels.
+
+````swift
+let firstPredicate = NSPredicate(format: "label BEGINSWITH 'First Picker'")
+let firstPicker = app.pickerWheels.elementMatchingPredicate(firstPredicate)
+firstPicker.adjustToPickerWheelValue("first value")
+
+let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
+let secondPicker = app.pickerWheels.elementMatchingPredicate(secondPredicate)
+secondPicker.adjustToPickerWheelValue("second value")
+
 ````
 
 ### Tapping links in web views
