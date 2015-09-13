@@ -34,7 +34,7 @@
 		8409D7A71BA4AF5E00D49AAF /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		848766081B9E0DBB0031C38D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		848DA0191BA1D8F3006CC527 /* ManageRosterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageRosterTableViewController.swift; sourceTree = "<group>"; };
-		84E1B4371B9DC34200453BB1 /* Cheat Sheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheat Sheet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E1B4371B9DC34200453BB1 /* Volley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E1B43A1B9DC34200453BB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E1B43C1B9DC34200453BB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84E1B43F1B9DC34200453BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		84E1B4381B9DC34200453BB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84E1B4371B9DC34200453BB1 /* Cheat Sheet.app */,
+				84E1B4371B9DC34200453BB1 /* Volley.app */,
 				84E1B44B1B9DC34200453BB1 /* UI Tests.xctest */,
 			);
 			name = Products;
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84E1B4361B9DC34200453BB1 /* Cheat Sheet */ = {
+		84E1B4361B9DC34200453BB1 /* Volley */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84E1B4541B9DC34200453BB1 /* Build configuration list for PBXNativeTarget "Cheat Sheet" */;
+			buildConfigurationList = 84E1B4541B9DC34200453BB1 /* Build configuration list for PBXNativeTarget "Volley" */;
 			buildPhases = (
 				84E1B4331B9DC34200453BB1 /* Sources */,
 				84E1B4341B9DC34200453BB1 /* Frameworks */,
@@ -131,9 +131,9 @@
 			);
 			dependencies = (
 			);
-			name = "Cheat Sheet";
+			name = Volley;
 			productName = "UI Testing Cheat Sheet";
-			productReference = 84E1B4371B9DC34200453BB1 /* Cheat Sheet.app */;
+			productReference = 84E1B4371B9DC34200453BB1 /* Volley.app */;
 			productType = "com.apple.product-type.application";
 		};
 		84E1B44A1B9DC34200453BB1 /* UI Tests */ = {
@@ -186,7 +186,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84E1B4361B9DC34200453BB1 /* Cheat Sheet */,
+				84E1B4361B9DC34200453BB1 /* Volley */,
 				84E1B44A1B9DC34200453BB1 /* UI Tests */,
 			);
 		};
@@ -239,7 +239,7 @@
 /* Begin PBXTargetDependency section */
 		84E1B44D1B9DC34200453BB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84E1B4361B9DC34200453BB1 /* Cheat Sheet */;
+			target = 84E1B4361B9DC34200453BB1 /* Volley */;
 			targetProxy = 84E1B44C1B9DC34200453BB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -377,7 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TEST_TARGET_NAME = "Cheat Sheet";
+				TEST_TARGET_NAME = Volley;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -390,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TEST_TARGET_NAME = "Cheat Sheet";
+				TEST_TARGET_NAME = Volley;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
@@ -407,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84E1B4541B9DC34200453BB1 /* Build configuration list for PBXNativeTarget "Cheat Sheet" */ = {
+		84E1B4541B9DC34200453BB1 /* Build configuration list for PBXNativeTarget "Volley" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84E1B4551B9DC34200453BB1 /* Debug */,

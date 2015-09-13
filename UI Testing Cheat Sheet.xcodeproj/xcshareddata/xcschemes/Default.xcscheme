@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84E1B4361B9DC34200453BB1"
-               BuildableName = "Cheat Sheet.app"
-               BlueprintName = "Cheat Sheet"
+               BuildableName = "Volley.app"
+               BlueprintName = "Volley"
                ReferencedContainer = "container:UI Testing Cheat Sheet.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1B4361B9DC34200453BB1"
-            BuildableName = "Cheat Sheet.app"
-            BlueprintName = "Cheat Sheet"
+            BuildableName = "Volley.app"
+            BlueprintName = "Volley"
             ReferencedContainer = "container:UI Testing Cheat Sheet.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1B4361B9DC34200453BB1"
-            BuildableName = "Cheat Sheet.app"
-            BlueprintName = "Cheat Sheet"
+            BuildableName = "Volley.app"
+            BlueprintName = "Volley"
             ReferencedContainer = "container:UI Testing Cheat Sheet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1B4361B9DC34200453BB1"
-            BuildableName = "Cheat Sheet.app"
-            BlueprintName = "Cheat Sheet"
+            BuildableName = "Volley.app"
+            BlueprintName = "Volley"
             ReferencedContainer = "container:UI Testing Cheat Sheet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
