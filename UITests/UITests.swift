@@ -8,7 +8,7 @@
 
 import XCTest
 
-class UI_Testing_Cheat_SheetUITests: XCTestCase {
+class UITests: XCTestCase {
     let app = XCUIApplication()
 
     override func setUp() {
