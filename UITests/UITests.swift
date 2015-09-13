@@ -70,10 +70,17 @@ class UITests: XCTestCase {
     func testAdjustingAPicker() {
         app.staticTexts["Manage Team"].tap()
 
-        let selectedFormationLabel = app.staticTexts["6-2 Formation"]
+        let selectedFormationLabel = app.staticTexts["5 attackers, 1 setter"]
         XCTAssertFalse(selectedFormationLabel.exists)
 
-        app.pickerWheels.element.adjustToPickerWheelValue("6-2 Formation")
+        let attackersPredicate = NSPredicate(format: "label BEGINSWITH 'Attackers Formation'")
+        let attackersPicker = app.pickerWheels.elementMatchingPredicate(attackersPredicate)
+        attackersPicker.adjustToPickerWheelValue("5 attackers")
+
+        let settersPredicate = NSPredicate(format: "label BEGINSWITH 'Setters Formation'")
+        let settersPicker = app.pickerWheels.elementMatchingPredicate(settersPredicate)
+        settersPicker.adjustToPickerWheelValue("1 setter")
+
         XCTAssert(selectedFormationLabel.exists)
     }
 

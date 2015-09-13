@@ -9,7 +9,8 @@
 import UIKit
 
 class ManageTeamViewController: UIViewController {
-    let formations = [ "4-2 Formation", "5-1 Formation", "6-2 Formation" ]
+    let attackers = [ "4 attackers", "5 attackers", "6 attackers" ]
+    let setters = [ "2 setters", "1 setter" ]
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var sliderValueLabel: UILabel!
@@ -32,7 +33,10 @@ class ManageTeamViewController: UIViewController {
     }
 
     private func updatePickerValue() {
-        selectedFormationLabel.text = formations[formationsPicker.selectedRowInComponent(0)]
+        let attackersFormation = attackers[formationsPicker.selectedRowInComponent(0)]
+        let settersFormation = setters[formationsPicker.selectedRowInComponent(1)]
+        let formation = "\(attackersFormation), \(settersFormation)"
+        selectedFormationLabel.text = formation
     }
 }
 
@@ -45,20 +49,26 @@ extension ManageTeamViewController: UITextFieldDelegate {
 
 extension ManageTeamViewController: UIPickerViewDataSource {
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
 
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return formations.count
+        return component == 0 ? attackers.count : setters.count
     }
 }
 
 extension ManageTeamViewController: UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return formations[row]
+        return component == 0 ? attackers[row] : setters[row]
     }
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updatePickerValue()
+    }
+}
+
+extension ManageTeamViewController: UIPickerViewAccessibilityDelegate {
+    func pickerView(pickerView: UIPickerView, accessibilityLabelForComponent component: Int) -> String? {
+        return component == 0 ? "Attackers Formation" : "Setters Formation"
     }
 }
