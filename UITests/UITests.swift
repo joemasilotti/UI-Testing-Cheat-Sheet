@@ -18,7 +18,7 @@ class UI_Testing_Cheat_SheetUITests: XCTestCase {
     }
 
     func testElementExists() {
-        XCTAssert(app.staticTexts["Manage Team"].exists)
+        XCTAssert(app.staticTexts["Volley"].exists)
     }
 
     func testElementExistsWithPredicate() {
