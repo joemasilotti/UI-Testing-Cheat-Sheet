@@ -1,5 +1,7 @@
 # UI Testing Cheat Sheet
 
+This repository is complementary code for my post, [UI Testing Cheat Sheet and Examples](http://masilotti.com/ui-testing-cheat-sheet/). The post goes into more detail with example images for most examples.
+
 The included Xcode 7 project highlights working code with a simple Test Host. This was last updated for Xcode 7 GM.
 
 ## Basic Functionality
