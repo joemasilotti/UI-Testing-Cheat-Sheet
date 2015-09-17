@@ -135,7 +135,7 @@ class UITests: XCTestCase {
     }
 
     private func waitForElementToAppear(element: XCUIElement) {
-        let existsPredicate = NSPredicate(format: "exists == 1")
+        let existsPredicate = NSPredicate(format: "exists == true")
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
         waitForExpectationsWithTimeout(5, handler: nil)
     }
