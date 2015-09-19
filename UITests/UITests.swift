@@ -139,8 +139,10 @@ class UITests: XCTestCase {
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
 
         waitForExpectationsWithTimeout(5) { (error) -> Void in
-            let message = "Failed to find \(element) after 5 seconds."
-            self.recordFailureWithDescription(message, inFile: file, atLine: line, expected: true)
+            if (error != nil) {
+                let message = "Failed to find \(element) after 5 seconds."
+                self.recordFailureWithDescription(message, inFile: file, atLine: line, expected: true)
+            }
         }
     }
 }
