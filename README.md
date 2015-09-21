@@ -110,3 +110,14 @@ bottomButton.pressForDuration(0.5, thenDragToElement: topButton)
 
 XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)
 ````
+
+### Pull to refresh
+
+Create a `XCUICoordinate` from the first cell in your table and another one with a `dy` of six. Then drag the first coordinate to the second.
+
+````swift
+let firstCell = app.staticTexts["Adrienne"]
+let start = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
+let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
+start.pressForDuration(0, thenDragToCoordinate: bottom)
+````

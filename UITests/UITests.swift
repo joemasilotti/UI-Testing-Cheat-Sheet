@@ -17,6 +17,17 @@ class UITests: XCTestCase {
         app.launch()
     }
 
+    func testRefreshControl() {
+        app.staticTexts["Manage Roster"].tap()
+
+        let firstCell = app.staticTexts["Adrienne"]
+        let coordinate = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
+        let bottom = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
+        coordinate.pressForDuration(0, thenDragToCoordinate: bottom)
+
+        app.buttons["Dismiss"].tap()
+    }
+
     func testElementExists() {
         XCTAssert(app.staticTexts["Volley"].exists)
     }
