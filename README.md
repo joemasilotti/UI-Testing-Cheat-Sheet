@@ -119,5 +119,5 @@ Create a `XCUICoordinate` from the first cell in your table and another one with
 let firstCell = app.staticTexts["Adrienne"]
 let start = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
 let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
-start.pressForDuration(0, thenDragToCoordinate: bottom)
+start.pressForDuration(0, thenDragToCoordinate: finish)
 ````
