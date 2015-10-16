@@ -19,8 +19,8 @@ Set up an expectation to use with `XCTest`. The predicate will wait until the el
 let goLabel = self.app.staticTexts["Go!"]
 XCTAssertFalse(goLabel.exists)
 
-let existsPredicate = NSPredicate(format: "exists == true")
-expectationForPredicate(existsPredicate, evaluatedWithObject: goLabel, handler: nil)
+let exists = NSPredicate(format: "exists == true")
+expectationForPredicate(exists, evaluatedWithObject: goLabel, handler: nil)
 
 app.buttons["Ready, set..."].tap()
 waitForExpectationsWithTimeout(5, handler: nil)
