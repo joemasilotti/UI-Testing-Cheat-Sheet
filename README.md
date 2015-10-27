@@ -4,6 +4,24 @@ This repository is complementary code for my post, [UI Testing Cheat Sheet and E
 
 The included Xcode 7 project highlights working code with a simple Test Host. This was last updated for Xcode 7 GM.
 
+## Contents
+
+- [Basic Functionality](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#basic-functionality)
+  - [Testing if an element exists](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#testing-if-an-element-exists) 
+  - [Waiting for an element to appear](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#waiting-for-an-element-to-appear) 
+- [Interacting with System Controls](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#interacting-with-system-controls)
+  - [Tapping buttons](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#tapping-buttons) 
+  - [Typing text](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#typing-text) 
+  - [Dismissing alerts](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#dismissing-alerts) 
+  - [Handling system alerts](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#handling-system-alerts) 
+  - [Sliding sliders](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#sliding-sliders) 
+  - [Interacting with pickers](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#interacting-with-pickers) 
+  - [Tapping links in web views](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#tapping-links-in-web-views) 
+- [Interactions](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#interactions)
+  - [Verifying the current controller's title](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#verifying-the-current-controllers-title) 
+  - [Reordering table cells](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#reordering-table-cells) 
+  - [Pull to refresh](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pull-to-refresh) 
+
 ## Basic Functionality
 
 ### Testing if an element exists
