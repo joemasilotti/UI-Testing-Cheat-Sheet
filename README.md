@@ -71,10 +71,16 @@ app.alerts["Alert Title"].buttons["Button Title"].tap()
 ### Handling system alerts
 Present a location services authorization dialog to the user and dismiss it with the following code.
 
-Note that this will correctly dismiss the alert, but the test suite will crash. See [radar://4979891669827584](http://openradar.appspot.com/radar?id=4979891669827584).
+Before presenting the alert add a UI Interuption Handler. When this fires, dismiss with the "Allow" button.
 
 ````swift
-app.alerts.buttons["Allow"].tap()
+addUIInterruptionMonitorWithDescription("Location Services") { (alert) -> Bool in
+  alert.buttons["Allow"].tap()
+  return true
+}
+
+app.buttons["Request Location"].tap()
+app.tap() // need to interact with the app again for the handler to fire
 ````
 
 ### Sliding sliders
