@@ -58,16 +58,16 @@ class UITests: XCTestCase {
         app.alerts["You won!"].buttons["Awesome!"].tap()
     }
 
-    /* By not starting this test with "test" it will not be run.
-     * This test is not being run because dismissing the system alert
-     * causes the test suite to crash.
-     * Bug report: http://openradar.appspot.com/radar?id=4979891669827584
-    */
-    func _testDismissingASystemAlert() {
+    func testDismissingASystemAlert() {
         app.staticTexts["View Schedule"].tap()
 
+        addUIInterruptionMonitorWithDescription("Location Services") { (alert) -> Bool in
+            alert.buttons["Allow"].tap()
+            return true
+        }
+
         app.buttons["Find Games Nearby?"].tap()
-        app.alerts.buttons["Allow"].tap() // works, but crashes the test suite.
+        app.tap() // need to interact with the app for the handler to fire
         XCTAssert(app.staticTexts["Authorized"].exists)
     }
 
