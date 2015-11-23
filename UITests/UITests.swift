@@ -17,6 +17,11 @@ class UITests: XCTestCase {
         app.launch()
     }
 
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
     func testRefreshControl() {
         app.staticTexts["Manage Roster"].tap()
 
