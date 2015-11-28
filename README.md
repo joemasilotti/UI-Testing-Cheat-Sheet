@@ -21,6 +21,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
   - [Verifying the current controller's title](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#verifying-the-current-controllers-title) 
   - [Reordering table cells](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#reordering-table-cells) 
   - [Pull to refresh](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pull-to-refresh) 
+  - [Move cursor position within text field](https://github.com/roland9/UI-Testing-Cheat-Sheet#move-cursor-position-within-text-field)
 
 ## Basic Functionality
 
@@ -144,4 +145,15 @@ let firstCell = app.staticTexts["Adrienne"]
 let start = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
 let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
 start.pressForDuration(0, thenDragToCoordinate: finish)
+````
+
+### Move cursor position within text field
+
+In this example, a table view cell contains a text field with some content. To move the cursor within the text field, create a `XCUICoordinate` from the left edge of the text field, tap & hold and then drag `dx` points to the right.
+
+````swift
+let textField = cells.textFields.elementBoundByIndex(1)
+let start = textField.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
+let finish = start.coordinateWithOffset(CGVectorMake(70, 0))
+start.pressForDuration(1.0, thenDragToCoordinate: finish)
 ````
