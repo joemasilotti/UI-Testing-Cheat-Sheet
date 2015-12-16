@@ -159,6 +159,6 @@ XCTAssert(app.navigationBars["Volleyball?"].exists)
 Pop a view controller by tapping the back button in the navigation bar and assert that the title in the navigation bar has changed.
 
 ```swift
-app.navigationBars.element.childrenMatchingType(.Button).elementBoundByIndex(0).tap()
+app.navigationBars.buttons.elementBoundByIndex(0).tap()
 XCTAssert(app.navigationBars["Volley"].exists)
 ```

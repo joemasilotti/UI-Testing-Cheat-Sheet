@@ -153,7 +153,7 @@ class UITests: XCTestCase {
     func testPoppingAViewController() {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
-        app.navigationBars.element.childrenMatchingType(.Button).elementBoundByIndex(0).tap()
+        app.navigationBars.buttons.elementBoundByIndex(0).tap()
         XCTAssert(app.navigationBars["Volley"].exists)
     }
 
