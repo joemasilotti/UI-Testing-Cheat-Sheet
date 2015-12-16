@@ -21,7 +21,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
   - [Verifying the current controller's title](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#verifying-the-current-controllers-title) 
   - [Reordering table cells](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#reordering-table-cells) 
   - [Pull to refresh](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pull-to-refresh) 
-  - [Pushing and Popping View Controller](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pushing-and-popping-view-controllers)
+  - [Pushing and Popping View Controllers](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pushing-and-popping-view-controllers)
 
 ## Basic Functionality
 
