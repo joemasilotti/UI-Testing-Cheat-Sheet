@@ -21,7 +21,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
   - [Verifying the current controller's title](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#verifying-the-current-controllers-title) 
   - [Reordering table cells](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#reordering-table-cells) 
   - [Pull to refresh](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pull-to-refresh) 
-  - [Pushing and Popping View Controllers](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pushing-and-popping-view-controllers)
+  - [Pushing and popping view controllers](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pushing-and-popping-view-controllers)
 
 ## Basic Functionality
 
@@ -147,7 +147,7 @@ let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
 start.pressForDuration(0, thenDragToCoordinate: finish)
 ````
 
-### Pushing and Popping View Controllers
+### Pushing and popping view controllers
 
 Test if a view controller was pushed onto the navigation stack.
 
