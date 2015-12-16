@@ -21,6 +21,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
   - [Verifying the current controller's title](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#verifying-the-current-controllers-title) 
   - [Reordering table cells](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#reordering-table-cells) 
   - [Pull to refresh](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pull-to-refresh) 
+  - [Pushing and Popping View Controller](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#pushing-and-popping-view-controller)
 
 ## Basic Functionality
 
@@ -145,3 +146,19 @@ let start = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
 let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
 start.pressForDuration(0, thenDragToCoordinate: finish)
 ````
+
+### Pushing and Popping View Controller
+
+Test if a view controller got pushed onto the navigation stack.
+
+```swift
+app.buttons["More Info"].tap()
+XCTAssert(app.navigationBars["Volleyball?"].exists)
+```
+
+Pop a view controller by tapping the back button in the navigation bar and assert that the title in the navigation bar has changed.
+
+```swift
+app.navigationBars.element.childrenMatchingType(.Button).elementBoundByIndex(0).tap()
+XCTAssert(app.navigationBars["Volley"].exists)
+```

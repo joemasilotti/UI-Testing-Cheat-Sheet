@@ -149,6 +149,13 @@ class UITests: XCTestCase {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
     }
+    
+    func testPoppingAViewController() {
+        app.buttons["More Info"].tap()
+        XCTAssert(app.navigationBars["Volleyball?"].exists)
+        app.navigationBars.element.childrenMatchingType(.Button).elementBoundByIndex(0).tap()
+        XCTAssert(app.navigationBars["Volley"].exists)
+    }
 
     private func waitForElementToAppear(element: XCUIElement, file: String = __FILE__, line: UInt = __LINE__) {
         let existsPredicate = NSPredicate(format: "exists == true")
