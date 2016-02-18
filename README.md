@@ -8,6 +8,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
 
 - [Basic Functionality](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#basic-functionality)
   - [Testing if an element exists](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#testing-if-an-element-exists) 
+  - [Testing if text with an ellipse exists](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#testing-if-text-with-an-ellipse-exists)
   - [Waiting for an element to appear](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#waiting-for-an-element-to-appear) 
 - [Interacting with System Controls](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#interacting-with-system-controls)
   - [Tapping buttons](https://github.com/joemasilotti/UI-Testing-Cheat-Sheet#tapping-buttons) 
@@ -33,6 +34,14 @@ XCTAssert(app.staticTexts["Welcome"].exists)
 
 ### Waiting for an element to appear
 Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
+
+### Testing if text with an ellipse exists
+A full text match will find an element even if the displayed text has an ellipse due to truncation.
+
+````swift
+let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
+XCTAssert(longNameCell.exists) // displayed text is "Adolph Blaine Charles David Earl Freder..."
+````
 
 ````swift
 let goLabel = self.app.staticTexts["Go!"]
