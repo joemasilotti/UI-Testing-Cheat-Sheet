@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8409D7A51BA4A45E00D49AAF /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409D7A41BA4A45E00D49AAF /* ManageTeamViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8409D7A81BA4AF5E00D49AAF /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409D7A71BA4AF5E00D49AAF /* ScheduleViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		848766091B9E0DBB0031C38D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848766081B9E0DBB0031C38D /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		848DA01A1BA1D8F3006CC527 /* ManageRosterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DA0191BA1D8F3006CC527 /* ManageRosterTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8409D7A51BA4A45E00D49AAF /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409D7A41BA4A45E00D49AAF /* ManageTeamViewController.swift */; };
+		8409D7A81BA4AF5E00D49AAF /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409D7A71BA4AF5E00D49AAF /* ScheduleViewController.swift */; };
+		848766091B9E0DBB0031C38D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848766081B9E0DBB0031C38D /* WebViewController.swift */; };
+		848DA01A1BA1D8F3006CC527 /* ManageRosterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DA0191BA1D8F3006CC527 /* ManageRosterTableViewController.swift */; };
 		849FEBEA1C7644EF008804F4 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FEBE91C7644EF008804F4 /* UITestCase.swift */; };
 		84E1B43B1B9DC34200453BB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1B43A1B9DC34200453BB1 /* AppDelegate.swift */; };
 		84E1B4401B9DC34200453BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E1B43E1B9DC34200453BB1 /* Main.storyboard */; };
 		84E1B4451B9DC34200453BB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E1B4431B9DC34200453BB1 /* LaunchScreen.storyboard */; };
 		84E1B4501B9DC34200453BB1 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1B44F1B9DC34200453BB1 /* UITests.swift */; };
-		84E1B4871B9DC5CE00453BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E1B4861B9DC5CE00453BB1 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		84E1B4871B9DC5CE00453BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E1B4861B9DC5CE00453BB1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
