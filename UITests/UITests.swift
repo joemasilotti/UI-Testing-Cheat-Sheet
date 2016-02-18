@@ -30,6 +30,13 @@ class UITests: UITestCase {
         XCTAssert(label.exists)
     }
 
+    func testElementWithEllipseExists() {
+        app.staticTexts["Manage Roster"].tap()
+
+        let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
+        XCTAssert(longNameCell.exists)
+    }
+
     func testTappingAButton() {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
