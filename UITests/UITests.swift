@@ -8,20 +8,7 @@
 
 import XCTest
 
-class UITests: XCTestCase {
-    let app = XCUIApplication()
-
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-        app.launch()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-        app.terminate()
-    }
-
+class UITests: UITestCase {
     func testRefreshControl() {
         app.staticTexts["Manage Roster"].tap()
 
@@ -41,6 +28,13 @@ class UITests: XCTestCase {
         let predicate = NSPredicate(format: "label BEGINSWITH[cd] 'set your team details'")
         let label = app.staticTexts.elementMatchingPredicate(predicate)
         XCTAssert(label.exists)
+    }
+
+    func testElementWithEllipseExists() {
+        app.staticTexts["Manage Roster"].tap()
+
+        let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
+        XCTAssert(longNameCell.exists)
     }
 
     func testTappingAButton() {
@@ -155,17 +149,5 @@ class UITests: XCTestCase {
         XCTAssert(app.navigationBars["Volleyball?"].exists)
         app.navigationBars.buttons.elementBoundByIndex(0).tap()
         XCTAssert(app.navigationBars["Volley"].exists)
-    }
-
-    private func waitForElementToAppear(element: XCUIElement, file: String = __FILE__, line: UInt = __LINE__) {
-        let existsPredicate = NSPredicate(format: "exists == true")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
-
-        waitForExpectationsWithTimeout(5) { (error) -> Void in
-            if (error != nil) {
-                let message = "Failed to find \(element) after 5 seconds."
-                self.recordFailureWithDescription(message, inFile: file, atLine: line, expected: true)
-            }
-        }
     }
 }
