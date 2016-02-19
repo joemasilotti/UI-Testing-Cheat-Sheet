@@ -32,9 +32,6 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
 XCTAssert(app.staticTexts["Welcome"].exists)
 ````
 
-### Waiting for an element to appear
-Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
-
 ### Testing if text with an ellipse exists
 A full text match will find an element even if the displayed text has an ellipse due to truncation.
 
@@ -42,6 +39,9 @@ A full text match will find an element even if the displayed text has an ellipse
 let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
 XCTAssert(longNameCell.exists) // displayed text is "Adolph Blaine Charles David Earl Freder..."
 ````
+
+### Waiting for an element to appear
+Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
 
 ````swift
 let goLabel = self.app.staticTexts["Go!"]
