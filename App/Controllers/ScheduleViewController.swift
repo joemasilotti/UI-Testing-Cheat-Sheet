@@ -21,36 +21,36 @@ class ScheduleViewController: UIViewController {
         updateLocationAuthorizationStatus()
     }
 
-    @IBAction func finishGameButtonTapped(sender: UIButton) {
+    @IBAction func finishGameButtonTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "You won!",
-            message: "Final Score: 27 - 25",
-            preferredStyle: UIAlertControllerStyle.Alert)
+          message: "Final Score: 27 - 25",
+          preferredStyle: UIAlertControllerStyle.alert)
 
-        let dismissAction = UIAlertAction(title: "Awesome!", style: UIAlertActionStyle.Default, handler: nil)
+        let dismissAction = UIAlertAction(title: "Awesome!", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(dismissAction)
 
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func loadMoreGamesButtonTapped(sender: UIButton) {
-        sender.setTitle("Loading...", forState: UIControlState.Normal)
+    @IBAction func loadMoreGamesButtonTapped(_ sender: UIButton) {
+        sender.setTitle("Loading...", for: UIControlState.normal)
 
-        sender.performSelector(Selector("setHidden:"), withObject: true, afterDelay: 2)
-        nextGameLabel.performSelector(Selector("setText:"), withObject: "Game 4 - Tomorrow", afterDelay: 2)
+        sender.perform(#selector(setter: sender.isHidden), with: true, afterDelay: 2)
+        nextGameLabel.perform(#selector(setter: nextGameLabel.text), with: "Game 4 - Tomorrow", afterDelay: 2)
     }
 
-    @IBAction func locationButtonTapped(sender: UIButton) {
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
     }
 
-    private func updateLocationAuthorizationStatus() {
+    fileprivate func updateLocationAuthorizationStatus() {
         var authorizationStatus: String
         switch CLLocationManager.authorizationStatus() {
-        case CLAuthorizationStatus.NotDetermined:
+        case CLAuthorizationStatus.notDetermined:
             authorizationStatus = "Not Determined"
-        case CLAuthorizationStatus.Denied,
-        CLAuthorizationStatus.Restricted:
+        case CLAuthorizationStatus.denied,
+        CLAuthorizationStatus.restricted:
             authorizationStatus = "Denied"
         default:
             authorizationStatus = "Authorized"
@@ -61,11 +61,11 @@ class ScheduleViewController: UIViewController {
 }
 
 extension ScheduleViewController: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         updateLocationAuthorizationStatus()
     }
 
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
 }
