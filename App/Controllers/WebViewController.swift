@@ -14,12 +14,13 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = NSURL(string: "https://en.wikipedia.org/wiki/Volleyball")
-        let request = NSURLRequest(URL: url!)
-        self.webView.loadRequest(request)
+        guard let url = NSURL(string: "https://en.wikipedia.org/wiki/Volleyball") else { return }
+
+        let request = NSURLRequest(url: url as URL)
+        self.webView.loadRequest(request as URLRequest)
     }
 
     @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
