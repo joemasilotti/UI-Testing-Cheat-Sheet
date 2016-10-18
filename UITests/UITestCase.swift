@@ -21,7 +21,7 @@ class UITestCase: XCTestCase {
         app.terminate()
     }
 
-    func waitForElementToAppear(element: XCUIElement, file: String = __FILE__, line: UInt = __LINE__) {
+    func waitForElementToAppear(element: XCUIElement, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
 
