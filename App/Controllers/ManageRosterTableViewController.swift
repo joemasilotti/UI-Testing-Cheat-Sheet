@@ -15,7 +15,7 @@ class ManageRosterTableViewController: UITableViewController {
         tableView.editing = true
 
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
         self.refreshControl = refreshControl
     }
