@@ -13,9 +13,9 @@ class UITests: UITestCase {
         app.staticTexts["Manage Roster"].tap()
 
         let firstCell = app.staticTexts["Adrienne"]
-        let coordinate = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
-        let bottom = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
-        coordinate.pressForDuration(0, thenDragToCoordinate: bottom)
+        let coordinate = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
+        coordinate.press(forDuration: 0, thenDragTo: bottom)
 
         app.buttons["Dismiss"].tap()
     }
@@ -26,7 +26,7 @@ class UITests: UITestCase {
 
     func testElementExistsWithPredicate() {
         let predicate = NSPredicate(format: "label BEGINSWITH[cd] 'set your team details'")
-        let label = app.staticTexts.elementMatchingPredicate(predicate)
+        let label = app.staticTexts.element(matching: predicate)
         XCTAssert(label.exists)
     }
 
@@ -60,7 +60,7 @@ class UITests: UITestCase {
     func testDismissingASystemAlert() {
         app.staticTexts["View Schedule"].tap()
 
-        addUIInterruptionMonitorWithDescription("Location Services") { (alert) -> Bool in
+        addUIInterruptionMonitor(withDescription: "Location Services") { (alert) -> Bool in
             alert.buttons["Allow"].tap()
             return true
         }
@@ -73,7 +73,7 @@ class UITests: UITestCase {
     func testAdjustingASlider() {
         app.staticTexts["Manage Team"].tap()
 
-        app.sliders.element.adjustToNormalizedSliderPosition(0.7)
+        app.sliders.element.adjust(toNormalizedSliderPosition: 0.7)
         XCTAssert(app.staticTexts["7"].exists)
     }
 
@@ -84,12 +84,12 @@ class UITests: UITestCase {
         XCTAssertFalse(selectedFormationLabel.exists)
 
         let attackersPredicate = NSPredicate(format: "label BEGINSWITH 'Attackers Formation'")
-        let attackersPicker = app.pickerWheels.elementMatchingPredicate(attackersPredicate)
-        attackersPicker.adjustToPickerWheelValue("5 attackers")
+        let attackersPicker = app.pickerWheels.element(matching: attackersPredicate)
+        attackersPicker.adjust(toPickerWheelValue: "5 attackers")
 
         let settersPredicate = NSPredicate(format: "label BEGINSWITH 'Setters Formation'")
-        let settersPicker = app.pickerWheels.elementMatchingPredicate(settersPredicate)
-        settersPicker.adjustToPickerWheelValue("1 setter")
+        let settersPicker = app.pickerWheels.element(matching: settersPredicate)
+        settersPicker.adjust(toPickerWheelValue: "1 setter")
 
         XCTAssert(selectedFormationLabel.exists)
     }
@@ -99,11 +99,11 @@ class UITests: UITestCase {
 
         let nextGameLabel = self.app.staticTexts["Game 4 - Tomorrow"]
         let existsPredicate = NSPredicate(format: "exists == 1")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: nextGameLabel, handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: nextGameLabel, handler: nil)
 
         app.buttons["Load More Games"].tap()
 
-        waitForExpectationsWithTimeout(5, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
         XCTAssert(nextGameLabel.exists)
     }
 
@@ -112,30 +112,32 @@ class UITests: UITestCase {
 
         let joeButton = app.buttons["Reorder Joe"]
         let brianButton = app.buttons["Reorder Brian"]
-        joeButton.pressForDuration(0.5, thenDragToElement: brianButton)
+        joeButton.press(forDuration: 0.5, thenDragTo: brianButton)
 
         XCTAssertLessThanOrEqual(joeButton.frame.maxY, brianButton.frame.minY)
     }
 
+    // Broken
     func testTextExistsInAWebView() {
         app.buttons["More Info"].tap()
 
         let volleyballLabel = app.staticTexts["Volleyball"]
-        waitForElementToAppear(volleyballLabel)
+        waitForElementToAppear(element: volleyballLabel)
         XCTAssert(volleyballLabel.exists)
     }
 
+    // Broken
     func testTappingALinkInAWebView() {
         app.buttons["More Info"].tap()
 
         let disambiguationLink = app.links["Volleyball (disambiguation)"]
-        waitForElementToAppear(disambiguationLink)
+        waitForElementToAppear(element: disambiguationLink)
         XCTAssert(disambiguationLink.exists)
 
         disambiguationLink.tap()
 
         let volleyballLink = app.links["Volleyball (ball)"]
-        waitForElementToAppear(volleyballLink)
+        waitForElementToAppear(element: volleyballLink)
         XCTAssert(volleyballLink.exists)
     }
 
@@ -143,11 +145,11 @@ class UITests: UITestCase {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
     }
-    
+
     func testPoppingAViewController() {
         app.buttons["More Info"].tap()
         XCTAssert(app.navigationBars["Volleyball?"].exists)
-        app.navigationBars.buttons.elementBoundByIndex(0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssert(app.navigationBars["Volley"].exists)
     }
 }
