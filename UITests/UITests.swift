@@ -122,7 +122,7 @@ class UITests: UITestCase {
         app.buttons["More Info"].tap()
 
         let volleyballLabel = app.staticTexts["Volleyball"]
-        waitForElementToAppear(element: volleyballLabel)
+        waitForElementToAppear(volleyballLabel)
         XCTAssert(volleyballLabel.exists)
     }
 
@@ -131,13 +131,13 @@ class UITests: UITestCase {
         app.buttons["More Info"].tap()
 
         let disambiguationLink = app.links["Volleyball (disambiguation)"]
-        waitForElementToAppear(element: disambiguationLink)
+        waitForElementToAppear(disambiguationLink)
         XCTAssert(disambiguationLink.exists)
 
         disambiguationLink.tap()
 
         let volleyballLink = app.links["Volleyball (ball)"]
-        waitForElementToAppear(element: volleyballLink)
+        waitForElementToAppear(volleyballLink)
         XCTAssert(volleyballLink.exists)
     }
 
