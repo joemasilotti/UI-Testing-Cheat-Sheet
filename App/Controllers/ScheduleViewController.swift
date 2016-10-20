@@ -61,7 +61,7 @@ class ScheduleViewController: UIViewController {
 }
 
 extension ScheduleViewController: CLLocationManagerDelegate {
-    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         updateLocationAuthorizationStatus()
     }
 
