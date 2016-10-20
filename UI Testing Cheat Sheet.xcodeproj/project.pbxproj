@@ -165,10 +165,12 @@
 				TargetAttributes = {
 					84E1B4361B9DC34200453BB1 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					84E1B44A1B9DC34200453BB1 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UZ7CKQ6UYU;
+						LastSwiftMigration = 0800;
 						TestTargetID = 84E1B4361B9DC34200453BB1;
 					};
 				};
@@ -354,6 +356,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -366,6 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -377,6 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Volley;
 				USES_XCTRUNNER = YES;
 			};
@@ -390,6 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.UI-Testing-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Volley;
 				USES_XCTRUNNER = YES;
 			};
