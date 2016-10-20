@@ -48,7 +48,7 @@ extension ManageTeamViewController: UITextFieldDelegate {
 }
 
 extension ManageTeamViewController: UIPickerViewDataSource {
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
 
