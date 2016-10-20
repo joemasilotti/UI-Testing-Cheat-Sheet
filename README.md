@@ -44,14 +44,14 @@ XCTAssert(longNameCell.exists) // displayed text is "Adolph Blaine Charles David
 Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
 
 ````swift
-let goLabel = self.app.staticTexts["Go!"]
+let goLabel = app.staticTexts["Go!"]
 XCTAssertFalse(goLabel.exists)
 
 let exists = NSPredicate(format: "exists == true")
-expectationForPredicate(exists, evaluatedWithObject: goLabel, handler: nil)
+expectation(for: exists, evaluatedWithObject: goLabel, handler: nil)
 
 app.buttons["Ready, set..."].tap()
-waitForExpectationsWithTimeout(5, handler: nil)
+waitForExpectations(timeout: 5, handler: nil)
 XCTAssert(goLabel.exists)
 ````
 
@@ -84,7 +84,7 @@ Present a location services authorization dialog to the user and dismiss it with
 Before presenting the alert add a UI Interuption Handler. When this fires, dismiss with the "Allow" button.
 
 ````swift
-addUIInterruptionMonitorWithDescription("Location Services") { (alert) -> Bool in
+addUIInterruptionMonitor(withDescription: "Location Services") { (alert) -> Bool in
   alert.buttons["Allow"].tap()
   return true
 }
@@ -97,26 +97,26 @@ app.tap() // need to interact with the app again for the handler to fire
 This will slide the value of the slider to 70%.
 
 ````swift
-app.sliders.element.adjustToNormalizedSliderPosition(0.7)
+app.sliders.element.adjust(toNormalizedSliderPosition: 0.7)
 ````
 
 ### Interacting with pickers
 A picker with one wheel:
 
 ````swift
-app.pickerWheels.element.adjustToPickerWheelValue("Picker Wheel Item Title")
+app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")
 ````
 
 A picker with multiple wheels. Make sure to set the accessibility delegate so the framework can identify the different wheels.
 
 ````swift
 let firstPredicate = NSPredicate(format: "label BEGINSWITH 'First Picker'")
-let firstPicker = app.pickerWheels.elementMatchingPredicate(firstPredicate)
-firstPicker.adjustToPickerWheelValue("first value")
+let firstPicker = app.pickerWheels.element(matching: firstPredicate)
+firstPicker.adjust(toPickerWheelValue: "first value")
 
 let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
-let secondPicker = app.pickerWheels.elementMatchingPredicate(secondPredicate)
-secondPicker.adjustToPickerWheelValue("second value")
+let secondPicker = app.pickerWheels.element(matching: secondPredicate)
+secondPicker.adjust(toPickerWheelValue: "second value")
 
 ````
 
@@ -140,7 +140,7 @@ Using this we can drag one reorder control to another, essentially reordering th
 ````swift
 let topButton = app.buttons["Reorder Top Cell"]
 let bottomButton = app.buttons["Reorder Bottom Cell"]
-bottomButton.pressForDuration(0.5, thenDragToElement: topButton)
+bottomButton.press(forDuration: 0.5, thenDragTo: topButton)
 
 XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)
 ````
@@ -151,9 +151,9 @@ Create a `XCUICoordinate` from the first cell in your table and another one with
 
 ````swift
 let firstCell = app.staticTexts["Adrienne"]
-let start = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
-let finish = firstCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
-start.pressForDuration(0, thenDragToCoordinate: finish)
+let start = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 0))
+let finish = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 6))
+start.press(forDuration: 0, thenDragTo: finish)
 ````
 
 ### Pushing and popping view controllers

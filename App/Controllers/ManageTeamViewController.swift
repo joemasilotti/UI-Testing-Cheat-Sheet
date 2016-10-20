@@ -24,7 +24,7 @@ class ManageTeamViewController: UIViewController {
         updatePickerValue()
     }
 
-    @IBAction func sliderValueChanged(slider: UISlider) {
+    @IBAction func sliderValueChanged(_ slider: UISlider) {
         updateSliderValue()
     }
 
@@ -32,43 +32,43 @@ class ManageTeamViewController: UIViewController {
         sliderValueLabel.text = String(format: "%.0f", slider.value)
     }
 
-    private func updatePickerValue() {
-        let attackersFormation = attackers[formationsPicker.selectedRowInComponent(0)]
-        let settersFormation = setters[formationsPicker.selectedRowInComponent(1)]
+    fileprivate func updatePickerValue() {
+        let attackersFormation = attackers[formationsPicker.selectedRow(inComponent: 0)]
+        let settersFormation = setters[formationsPicker.selectedRow(inComponent: 1)]
         let formation = "\(attackersFormation), \(settersFormation)"
         selectedFormationLabel.text = formation
     }
 }
 
 extension ManageTeamViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
 }
 
 extension ManageTeamViewController: UIPickerViewDataSource {
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
 
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return component == 0 ? attackers.count : setters.count
     }
 }
 
 extension ManageTeamViewController: UIPickerViewDelegate {
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return component == 0 ? attackers[row] : setters[row]
     }
 
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updatePickerValue()
     }
 }
 
 extension ManageTeamViewController: UIPickerViewAccessibilityDelegate {
-    func pickerView(pickerView: UIPickerView, accessibilityLabelForComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, accessibilityLabelForComponent component: Int) -> String? {
         return component == 0 ? "Attackers Formation" : "Setters Formation"
     }
 }

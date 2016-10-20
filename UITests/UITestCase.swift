@@ -21,14 +21,14 @@ class UITestCase: XCTestCase {
         app.terminate()
     }
 
-    func waitForElementToAppear(element: XCUIElement, file: String = __FILE__, line: UInt = __LINE__) {
+    func waitForElementToAppear(_ element: XCUIElement, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
-        waitForExpectationsWithTimeout(5) { (error) -> Void in
+        waitForExpectations(timeout: 5) { (error) -> Void in
             if (error != nil) {
                 let message = "Failed to find \(element) after 5 seconds."
-                self.recordFailureWithDescription(message, inFile: file, atLine: line, expected: true)
+                self.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
             }
         }
     }

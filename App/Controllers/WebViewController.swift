@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
-    @IBOutlet weak var webView: UIWebView!
+    private let webView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        installWebView()
 
-        let url = NSURL(string: "https://wikipedia.org/wiki/Volleyball")
-        let request = NSURLRequest(URL: url!)
-        self.webView.loadRequest(request)
+        guard let url = URL(string: "https://en.wikipedia.org/wiki/Volleyball") else { return }
+
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
 
     @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
+
+    private func installWebView() {
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(webView)
+
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
     }
 }
