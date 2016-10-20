@@ -22,9 +22,7 @@ class ScheduleViewController: UIViewController {
     }
 
     @IBAction func finishGameButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "You won!",
-          message: "Final Score: 27 - 25",
-          preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "You won!", message: "Final Score: 27 - 25", preferredStyle: UIAlertControllerStyle.alert)
 
         let dismissAction = UIAlertAction(title: "Awesome!", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(dismissAction)
