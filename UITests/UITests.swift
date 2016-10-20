@@ -117,16 +117,13 @@ class UITests: UITestCase {
         XCTAssertLessThanOrEqual(joeButton.frame.maxY, brianButton.frame.minY)
     }
 
-    // Broken
     func testTextExistsInAWebView() {
         app.buttons["More Info"].tap()
-
         let volleyballLabel = app.staticTexts["Volleyball"]
         waitForElementToAppear(volleyballLabel)
         XCTAssert(volleyballLabel.exists)
     }
 
-    // Broken
     func testTappingALinkInAWebView() {
         app.buttons["More Info"].tap()
 
