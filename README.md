@@ -78,6 +78,11 @@ textField.typeText("joemasilotti")
 app.alerts["Alert Title"].buttons["Button Title"].tap()
 ````
 
+### Dismissing action sheets
+````swift
+app.sheets["Sheet Title"].buttons["Button Title"].tap()
+````
+
 ### Handling system alerts
 Present a location services authorization dialog to the user and dismiss it with the following code.
 
