@@ -14,7 +14,7 @@ class UITests: UITestCase {
 
         let firstCell = app.staticTexts["Adrienne"]
         let coordinate = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
-        let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
+        let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 10))
         coordinate.press(forDuration: 0, thenDragTo: bottom)
 
         app.buttons["Dismiss"].tap()
