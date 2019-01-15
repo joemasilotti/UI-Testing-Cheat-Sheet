@@ -8,7 +8,7 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
 
 - [Basic Functionality](#basic-functionality)
   - [Testing if an element exists](#testing-if-an-element-exists) 
-  - [Testing if text with an ellipse exists](#testing-if-text-with-an-ellipse-exists)
+  - [Testing if text with an ellipsis exists](#testing-if-text-with-an-ellipsis-exists)
   - [Waiting for an element to appear](#waiting-for-an-element-to-appear) 
 - [Interacting with System Controls](#interacting-with-system-controls)
   - [Tapping buttons](#tapping-buttons) 
@@ -32,8 +32,8 @@ The included Xcode 7 project highlights working code with a simple Test Host. Th
 XCTAssert(app.staticTexts["Welcome"].exists)
 ````
 
-### Testing if text with an ellipse exists
-A full text match will find an element even if the displayed text has an ellipse due to truncation.
+### Testing if text with an ellipsis exists
+A full text match will find an element even if the displayed text has an ellipsis due to truncation.
 
 ````swift
 let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
