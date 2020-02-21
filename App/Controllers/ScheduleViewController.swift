@@ -22,16 +22,16 @@ class ScheduleViewController: UIViewController {
     }
 
     @IBAction func finishGameButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "You won!", message: "Final Score: 27 - 25", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "You won!", message: "Final Score: 27 - 25", preferredStyle: UIAlertController.Style.alert)
 
-        let dismissAction = UIAlertAction(title: "Awesome!", style: UIAlertActionStyle.default, handler: nil)
+        let dismissAction = UIAlertAction(title: "Awesome!", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(dismissAction)
 
         present(alert, animated: true, completion: nil)
     }
 
     @IBAction func loadMoreGamesButtonTapped(_ sender: UIButton) {
-        sender.setTitle("Loading...", for: UIControlState.normal)
+        sender.setTitle("Loading...", for: UIControl.State.normal)
 
         sender.perform(#selector(setter: sender.isHidden), with: true, afterDelay: 2)
         nextGameLabel.perform(#selector(setter: nextGameLabel.text), with: "Game 4 - Tomorrow", afterDelay: 2)

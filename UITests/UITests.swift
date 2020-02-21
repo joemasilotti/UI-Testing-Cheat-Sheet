@@ -33,8 +33,11 @@ class UITests: UITestCase {
     func testElementWithEllipseExists() {
         app.staticTexts["Manage Roster"].tap()
 
-        let longNameCell = app.staticTexts["Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"]
-        XCTAssert(longNameCell.exists)
+        let searchText = "Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", searchText)
+        let elementQuery = app.staticTexts.containing(predicate)
+
+        XCTAssert(elementQuery.count > 0)
     }
 
     func testTappingAButton() {
@@ -61,7 +64,7 @@ class UITests: UITestCase {
         app.staticTexts["View Schedule"].tap()
 
         addUIInterruptionMonitor(withDescription: "Location Services") { (alert) -> Bool in
-            alert.buttons["Allow"].tap()
+            alert.buttons["Allow Once"].tap()
             return true
         }
 
