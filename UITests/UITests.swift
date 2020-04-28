@@ -12,12 +12,15 @@ class UITests: UITestCase {
     func testRefreshControl() {
         app.staticTexts["Manage Roster"].tap()
 
+        addUIInterruptionMonitor(withDescription: "Roster Refreshed") { (alert) -> Bool in
+            alert.buttons["Dismiss"].tap()
+            return true
+        }
+
         let firstCell = app.staticTexts["Adrienne"]
         let coordinate = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
         let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 10))
         coordinate.press(forDuration: 0, thenDragTo: bottom)
-
-        app.buttons["Dismiss"].tap()
     }
 
     func testElementExists() {

@@ -21,11 +21,11 @@ class ManageRosterTableViewController: UITableViewController {
     }
 
     @objc func refresh() {
+        refreshControl!.endRefreshing()
+
         let alert = UIAlertController(title: "Roster Refreshed", message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.cancel, handler: nil))
         present(alert, animated: true, completion: nil)
-
-        refreshControl!.endRefreshing()
     }
 
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
