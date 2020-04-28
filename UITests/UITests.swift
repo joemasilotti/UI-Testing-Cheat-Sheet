@@ -8,39 +8,17 @@
 
 import XCTest
 
-class UITests: UITestCase {
-    func testRefreshControl() {
-        app.staticTexts["Manage Roster"].tap()
+class UITests: XCTestCase {
+    let app = XCUIApplication()
 
-        addUIInterruptionMonitor(withDescription: "Roster Refreshed") { (alert) -> Bool in
-            alert.buttons["Dismiss"].tap()
-            return true
-        }
-
-        let firstCell = app.staticTexts["Adrienne"]
-        let coordinate = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
-        let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 10))
-        coordinate.press(forDuration: 0, thenDragTo: bottom)
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+        app.launch()
     }
 
     func testElementExists() {
         XCTAssert(app.staticTexts["Volley"].exists)
-    }
-
-    func testElementExistsWithPredicate() {
-        let predicate = NSPredicate(format: "label BEGINSWITH[cd] 'set your team details'")
-        let label = app.staticTexts.element(matching: predicate)
-        XCTAssert(label.exists)
-    }
-
-    func testElementWithEllipseExists() {
-        app.staticTexts["Manage Roster"].tap()
-
-        let searchText = "Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff, Senior"
-        let predicate = NSPredicate(format: "label CONTAINS[c] %@", searchText)
-        let elementQuery = app.staticTexts.containing(predicate)
-
-        XCTAssert(elementQuery.count > 0)
     }
 
     func testTappingAButton() {
@@ -100,6 +78,20 @@ class UITests: UITestCase {
         XCTAssert(selectedFormationLabel.exists)
     }
 
+    func testPushingAController() {
+        app.buttons["More Info"].tap()
+        XCTAssert(app.navigationBars["Volleyball?"].exists)
+    }
+
+    func testPoppingAViewController() {
+        app.buttons["More Info"].tap()
+        XCTAssert(app.navigationBars["Volleyball?"].exists)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssert(app.navigationBars["Volley"].exists)
+    }
+
+    // Advanced
+
     func testWaitingForAnElementToAppear() {
         app.staticTexts["View Schedule"].tap()
 
@@ -126,33 +118,32 @@ class UITests: UITestCase {
     func testTextExistsInAWebView() {
         app.buttons["More Info"].tap()
         let volleyballLabel = app.staticTexts["Volleyball"]
-        waitForElementToAppear(volleyballLabel)
-        XCTAssert(volleyballLabel.exists)
+        XCTAssert(volleyballLabel.waitForExistence(timeout: 5))
     }
 
     func testTappingALinkInAWebView() {
         app.buttons["More Info"].tap()
 
         let disambiguationLink = app.links["Volleyball (disambiguation)"]
-        waitForElementToAppear(disambiguationLink)
-        XCTAssert(disambiguationLink.exists)
+        XCTAssert(disambiguationLink.waitForExistence(timeout: 5))
 
         disambiguationLink.tap()
 
         let volleyballLink = app.links["Volleyball (ball)"]
-        waitForElementToAppear(volleyballLink)
-        XCTAssert(volleyballLink.exists)
+        XCTAssert(volleyballLink.waitForExistence(timeout: 5))
     }
 
-    func testPushingAController() {
-        app.buttons["More Info"].tap()
-        XCTAssert(app.navigationBars["Volleyball?"].exists)
-    }
+    func testRefreshControl() {
+        app.staticTexts["Manage Roster"].tap()
 
-    func testPoppingAViewController() {
-        app.buttons["More Info"].tap()
-        XCTAssert(app.navigationBars["Volleyball?"].exists)
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        XCTAssert(app.navigationBars["Volley"].exists)
+        addUIInterruptionMonitor(withDescription: "Roster Refreshed") { (alert) -> Bool in
+            alert.buttons["Dismiss"].tap()
+            return true
+        }
+
+        let firstCell = app.staticTexts["Adrienne"]
+        let coordinate = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let bottom = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 10))
+        coordinate.press(forDuration: 0, thenDragTo: bottom)
     }
 }
