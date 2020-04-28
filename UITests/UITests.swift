@@ -94,15 +94,10 @@ class UITests: XCTestCase {
 
     func testWaitingForAnElementToAppear() {
         app.staticTexts["View Schedule"].tap()
-
-        let nextGameLabel = self.app.staticTexts["Game 4 - Tomorrow"]
-        let existsPredicate = NSPredicate(format: "exists == 1")
-        expectation(for: existsPredicate, evaluatedWith: nextGameLabel, handler: nil)
-
         app.buttons["Load More Games"].tap()
 
-        waitForExpectations(timeout: 5, handler: nil)
-        XCTAssert(nextGameLabel.exists)
+        let nextGameLabel = self.app.staticTexts["Game 4 - Tomorrow"]
+        XCTAssert(nextGameLabel.waitForExistence(timeout: 5))
     }
 
     func testCellReordering() {
