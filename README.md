@@ -2,7 +2,7 @@
 
 This repository is complementary code for my post, [UI Testing Cheat Sheet and Examples](http://masilotti.com/ui-testing-cheat-sheet/). The post goes into more detail with example images for most examples.
 
-The included Xcode 7 project highlights working code with a simple Test Host. This was last updated for Xcode 7 GM.
+The included project highlights working code with a simple Test Host. This was last updated for Swift 5 on Xcode 11.4.1.
 
 ## Contents
 
@@ -41,18 +41,14 @@ XCTAssert(longNameCell.exists) // displayed text is "Adolph Blaine Charles David
 ````
 
 ### Waiting for an element to appear
-Set up an expectation to use with `XCTest`. The predicate will wait until the element's `-exist` property is true.
+"Waiting" is now built into XCTest.
 
 ````swift
 let goLabel = app.staticTexts["Go!"]
 XCTAssertFalse(goLabel.exists)
 
-let exists = NSPredicate(format: "exists == true")
-expectation(for: exists, evaluatedWithObject: goLabel, handler: nil)
-
 app.buttons["Ready, set..."].tap()
-waitForExpectations(timeout: 5, handler: nil)
-XCTAssert(goLabel.exists)
+XCTAssert(goLabel.waitForExistence(timeout: 5))
 ````
 
 ## Interacting with System Controls
@@ -86,7 +82,7 @@ app.sheets["Sheet Title"].buttons["Button Title"].tap()
 ### Handling system alerts
 Present a location services authorization dialog to the user and dismiss it with the following code.
 
-Before presenting the alert add a UI Interuption Handler. When this fires, dismiss with the "Allow" button.
+Before presenting the alert add a UI Interruption Handler. When this fires, dismiss with the "Allow" button.
 
 ````swift
 addUIInterruptionMonitor(withDescription: "Location Services") { (alert) -> Bool in
@@ -157,7 +153,7 @@ Create a `XCUICoordinate` from the first cell in your table and another one with
 ````swift
 let firstCell = app.staticTexts["Adrienne"]
 let start = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 0))
-let finish = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 6))
+let finish = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 10))
 start.press(forDuration: 0, thenDragTo: finish)
 ````
 
